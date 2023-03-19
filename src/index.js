@@ -19,6 +19,7 @@ fetchCountriesInput.addEventListener("input", debounce(() => {
 
 
 function renderCountryList(countries) {
+    
     if (countries.length > 10) {
         Notiflix.Notify.info("Too many matches found. Please enter a more specific name.")
     } else if (countries.length === 1) {
