@@ -19,10 +19,10 @@ fetchCountriesInput.addEventListener("input", debounce(() => {
 
 
 function renderCountryList(countries) {
-    if (fetchCountriesInput.textContent !== country.name.official) {
-        countryList.innerHTML = "";
-    }  
-    else
+    // if (fetchCountriesInput.textContent !== country.name.official) {
+    //     countryList.innerHTML = "";
+    // }  
+    // else
     if (countries.length > 10) {
         Notiflix.Notify.info("Too many matches found. Please enter a more specific name.");
     } else if (countries.length === 1) {
