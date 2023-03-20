@@ -19,9 +19,8 @@ fetchCountriesInput.addEventListener("input", debounce(() => {
 
 
 function renderCountryList(countries) {
-    // if (fetchCountriesInput.textContent !== `$ country.name.official }`) {
-    //         fetchCountriesInput.value.trim()
-    //     return countryInfo.remove();
+    // if (fetchCountriesInput.textContent !== country.name.official) {
+    //     countryInfo.innerHTML = "";
     // }  
     // else
         if (countries.length > 10) {
