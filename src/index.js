@@ -19,11 +19,11 @@ fetchCountriesInput.addEventListener("input", debounce(() => {
 
 
 function renderCountryList(countries) {
-    // if (fetchCountriesInput.textContent !== country.name.official) {
-    //     countryInfo.innerHTML = "";
-    // }  
-    // else
-        if (countries.length > 10) {
+    if (fetchCountriesInput.textContent !== country.name.official) {
+        countryList.innerHTML = "";
+    }  
+    else
+    if (countries.length > 10) {
         Notiflix.Notify.info("Too many matches found. Please enter a more specific name.");
     } else if (countries.length === 1) {
         const countryListMarkup = countries
@@ -37,7 +37,7 @@ function renderCountryList(countries) {
             .join("");
         countryList.innerHTML = countryListMarkup;
 
-        const countryInfoMarkup = countries
+    const countryInfoMarkup = countries
             .map((country) => {
                 return `
                 <p><b>Capital:</b> ${country.capital}</p>
