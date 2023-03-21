@@ -18,7 +18,7 @@ fetchCountriesInput.addEventListener("input", debounce(() => {
 );
 
 
-const clearResult = () => {
+const clearResult= () => {
     return countryInfo.innerHTML = "";
 };
 
