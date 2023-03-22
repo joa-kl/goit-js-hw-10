@@ -12,21 +12,22 @@ const countryInfo = document.querySelector(".country-info");
 fetchCountriesInput.addEventListener("input", debounce(() => {
     fetchCountries()
         .then((countries) => renderCountryList(countries))
+        // .catch((error) => console.log(error))
         .catch(() => Notiflix.Notify.failure("Oops, there is no country with that name"))
         // .finally(() => countryInfo.remove());
     }, DEBOUNCE_DELAY)
 );
 
 
-const clearResult= () => {
-    return countryInfo.innerHTML = "";
-};
-
 
 function renderCountryList(countries) {
-    
+    const name = fetchCountriesInput.value.trim();
+    if (name === "") {
+        return countryInfo.innerHTML = "";
+    }
     if (countries.length > 10) {
         Notiflix.Notify.info("Too many matches found. Please enter a more specific name.");
+       
 
     } else if (countries.length === 1) {
         const countryListMarkup = countries
@@ -51,7 +52,7 @@ function renderCountryList(countries) {
             .join("");
         countryInfo.innerHTML = countryInfoMarkup;
         console.log(countryInfoMarkup);
-    
+       
    
         } else {
             const countryListMarkup = countries
@@ -65,8 +66,9 @@ function renderCountryList(countries) {
                 .join("");
         countryList.innerHTML = countryListMarkup;
         clearResult();
-        } 
-    }
+        
+    } 
+}
 
 
 
