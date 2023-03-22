@@ -23,7 +23,7 @@ fetchCountriesInput.addEventListener("input", debounce(() => {
 function renderCountryList(countries) {
     const name = fetchCountriesInput.value.trim();
     if (name === "") {
-        return countryInfo.innerHTML = "";
+        return (countryInfo.innerHTML = ""), (countryList.innerHTML = '');
     }
     if (countries.length > 10) {
         Notiflix.Notify.info("Too many matches found. Please enter a more specific name.");
